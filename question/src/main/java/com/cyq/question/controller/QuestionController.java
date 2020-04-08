@@ -50,7 +50,7 @@ public class QuestionController {
 
 
     /**
-     * 删除
+     * 删除成功
      *
      * @param questionId
      * @return
