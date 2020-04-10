@@ -90,6 +90,8 @@ public class UserController {
             Map map = new HashMap();
             map.put("token", token);
             map.put("userId", user.getUserId());
+            map.put("userImage",user.getPersonImage());
+            map.put("userName",user.getUsername());
             return new Result(true, StatusCode.OK, "登录成功", map);
         } else {
             return new Result(false, StatusCode.LOGINERROR, "用户名/手机或密码错误");

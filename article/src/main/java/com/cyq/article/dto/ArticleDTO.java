@@ -20,6 +20,12 @@ public class ArticleDTO {
     @ApiModelProperty(value = "用户Id")
     private String userId;
 
+    @ApiModelProperty(value = "用户名")
+    private String userName;
+
+    @ApiModelProperty(value = "用户头像")
+    private String userImage;
+
     @ApiModelProperty(value = "分类Id")
     private String categoryId;
 

@@ -16,10 +16,10 @@ import java.util.List;
  */
 public interface ArticleDao extends JpaRepository<Article, String>, JpaSpecificationExecutor<Article> {
 
-    @Query(value = "select article_id,user_id,category_id,category_name,title,content,filter_content,article_image,comment_total,collection_total,thumbup,create_date,article_state from tb_article where article_state = '1' and category_id = ?1", nativeQuery = true)
+    @Query(value = "select article_id,user_id,user_name,user_image,category_id,category_name,title,content,filter_content,article_image,comment_total,collection_total,thumbup,create_date,article_state from tb_article where article_state = '1' and category_id = ?1", nativeQuery = true)
     public List<Article> findAllByCategoryId(String categoryId);
 
-    @Query(value = "select article_id,user_id,category_id,category_name,title,content,filter_content,article_image,comment_total,collection_total,thumbup,create_date,article_state from tb_article where article_state = '1' and user_id = ?1", nativeQuery = true)
+    @Query(value = "select article_id,user_id,user_name,user_image,category_id,category_name,title,content,filter_content,article_image,comment_total,collection_total,thumbup,create_date,article_state from tb_article where article_state = '1' and user_id = ?1", nativeQuery = true)
     public List<Article> findAllByUserId(String userId);
 
     // 点赞

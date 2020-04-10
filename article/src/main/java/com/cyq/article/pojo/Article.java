@@ -34,6 +34,12 @@ public class Article implements Serializable {
     @ApiModelProperty(notes = "用户Id")
     private String userId;
 
+    @ApiModelProperty(notes = "用户名")
+    private String userName;
+
+    @ApiModelProperty(notes = "用户头像")
+    private String userImage;
+
     @ApiModelProperty(notes = "分类Id")
     private String categoryId;
     
@@ -62,7 +68,7 @@ public class Article implements Serializable {
     private int thumbup;
 
     @ApiModelProperty(notes = "创建时间")
-    @JsonFormat(pattern="yyyy年MM月dd日 HH:mm",timezone="GMT+8")
+    @JsonFormat(pattern="yyyy年MM月dd日",timezone="GMT+8")
     private LocalDateTime createDate;
 
     @ApiModelProperty(notes = "文章状态，是否显示（0：否，1：是）")

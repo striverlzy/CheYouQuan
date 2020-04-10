@@ -91,6 +91,8 @@ public class ArticleService {
         Article article = new Article();
         article.setArticleId(idWorker.nextId() + "");
         article.setUserId(param.getUserId());
+        article.setUserName(param.getUserName());
+        article.setUserImage(param.getUserImage());
         article.setCategoryId(param.getCategoryId());
         article.setCreateDate(LocalDateTime.now());
         article.setTitle(param.getTitle());
