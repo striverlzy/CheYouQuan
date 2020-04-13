@@ -99,6 +99,7 @@ public class ArticleService {
         article.setCategoryName(param.getCategoryName());
         article.setContent(param.getContent());
         article.setFilterContent(param.getFilterContent());
+        article.setIsCollection("0");
         article.setArticleState("1");
         article.setCommentTotal(0);
         article.setThumbup(0);

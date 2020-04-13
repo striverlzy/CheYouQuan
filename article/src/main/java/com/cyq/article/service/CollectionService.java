@@ -44,8 +44,8 @@ public class CollectionService {
     public void addCollectionRecord(CollectionRecordDTO param) {
         CollectionRecord collectionRecord = new CollectionRecord();
         collectionRecord.setCollectionRecordId(idWorker.nextId() + "");
-        collectionRecord.setArtilceId(param.getArtilceId());
-        collectionRecord.setArtilceTitle(param.getArtilceTitle());
+        collectionRecord.setArticleId(param.getArticleId());
+        collectionRecord.setArticleTitle(param.getArticleTitle());
         collectionRecord.setUserId(param.getUserId());
         collectionRecord.setUserImage(param.getUserImage());
         collectionRecord.setUserName(param.getUserName());
@@ -115,8 +115,11 @@ public class CollectionService {
                 if (!StringUtils.isEmpty(signUpRecord.getUserId())) {
                     predicateList.add(cb.equal(root.get("userId").as(String.class), signUpRecord.getUserId()));
                 }
+                if (!StringUtils.isEmpty(signUpRecord.getArticleId())) {
+                    predicateList.add(cb.equal(root.get("articleId").as(String.class), signUpRecord.getArticleId()));
+                }
                 List<Order> orders = new ArrayList<>();
-                orders.add(cb.desc(root.get("createDate").as(LocalDateTime.class)));
+                orders.add(cb.desc(root.get("createDate").as(LocalDate.class)));
                 query.orderBy(orders);
 
                 return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));

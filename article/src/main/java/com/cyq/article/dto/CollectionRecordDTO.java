@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class CollectionRecordDTO {
 
     @ApiModelProperty(notes = "文章id")
-    private String artilceId;
+    private String articleId;
 
     @ApiModelProperty(notes = "用户id")
     private String userId;
@@ -30,7 +30,7 @@ public class CollectionRecordDTO {
     private String userName;
 
     @ApiModelProperty(notes = "文章标题")
-    private String artilceTitle;
+    private String articleTitle;
 
     @ApiModelProperty(value = "页数")
     private Integer page = 1;

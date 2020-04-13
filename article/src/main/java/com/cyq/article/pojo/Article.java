@@ -64,6 +64,9 @@ public class Article implements Serializable {
     @ApiModelProperty(notes = "收藏数")
     private int collectionTotal;
 
+    @ApiModelProperty(notes = "当前用户是否已收藏")
+    private String isCollection;
+
     @ApiModelProperty(notes = "点赞数")
     private int thumbup;
 

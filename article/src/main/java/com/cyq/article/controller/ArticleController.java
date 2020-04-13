@@ -4,6 +4,7 @@ import com.cyq.article.dto.ArticleDTO;
 import com.cyq.article.dto.CollectionRecordDTO;
 import com.cyq.article.dto.CommentDTO;
 import com.cyq.article.pojo.Article;
+import com.cyq.article.pojo.CollectionRecord;
 import com.cyq.article.service.ArticleService;
 import com.cyq.article.service.CollectionService;
 import com.cyq.article.service.CommentService;
@@ -19,7 +20,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author：liuzhongyu
@@ -70,6 +71,7 @@ public class ArticleController {
     public Result updateThumbup(@RequestParam String articleId) {
         return new Result(true, StatusCode.OK, "点赞成功", articleService.updateThumbup(articleId));
     }
+
     /**
      * 取消点赞
      *
@@ -100,6 +102,7 @@ public class ArticleController {
     public Result updateCommentThumbup(@RequestParam String commentId) {
         return new Result(true, StatusCode.OK, "点赞成功", commentService.updateThumbup(commentId));
     }
+
     /**
      * 取消评论点赞
      *
@@ -180,7 +183,25 @@ public class ArticleController {
             param.setSize(new Integer(10));
         }
         Page<Article> pageList = articleService.findSearch(param);
-        return new Result(true, StatusCode.OK, "查询成功", new PageResult<Article>(pageList.getTotalElements(), pageList.getContent()));
+        List<Article> articleList = new ArrayList<Article>();
+        List<CollectionRecord> collectionList = new ArrayList<CollectionRecord>();
+        Map map = new HashMap();
+        CollectionRecordDTO collectionRecordDTO = new CollectionRecordDTO();
+        articleList = new PageResult<Article>(pageList.getTotalElements(), pageList.getContent()).getRows();
+        for (int i = 0; i < articleList.size(); i++) {
+            collectionRecordDTO.setArticleId(articleList.get(i).getArticleId());
+            collectionRecordDTO.setUserId(articleList.get(i).getUserId());
+            Page<CollectionRecord> pageCollection = collectionService.findRecordByUserId(collectionRecordDTO);
+            collectionList = new PageResult<CollectionRecord>(pageCollection.getTotalElements(), pageCollection.getContent()).getRows();
+            if (collectionList.size() > 0) {
+                articleList.get(i).setIsCollection("1");
+            }else {
+                articleList.get(i).setIsCollection("0");
+            }
+        }
+        map.put("rows",articleList);
+        map.put("total",new PageResult<Article>(pageList.getTotalElements(), pageList.getContent()).getTotal());
+        return new Result(true, StatusCode.OK, "查询成功", map);
     }
 
     /**
@@ -222,10 +243,23 @@ public class ArticleController {
      */
     @ApiOperation(value = "收藏", notes = "收藏")
     @PostMapping(value = "/collection")
-    public Result collection(@RequestBody CollectionRecordDTO collectionRecordDTO){
+    public Result collection(@RequestBody CollectionRecordDTO collectionRecordDTO) {
         collectionService.addCollectionRecord(collectionRecordDTO);
-        collectionService.collection(collectionRecordDTO.getArtilceId());
+        collectionService.collection(collectionRecordDTO.getArticleId());
         return new Result(true, StatusCode.OK, "收藏成功");
+    }
+
+    /**
+     * 查看收藏
+     *
+     * @param collectionRecordDTO
+     * @return
+     */
+    @ApiOperation(value = "查看收藏", notes = "查看收藏")
+    @PostMapping(value = "/search/collection")
+    public Result searchCollection(@RequestBody CollectionRecordDTO collectionRecordDTO) {
+        Page<CollectionRecord> pageList = collectionService.findRecordByUserId(collectionRecordDTO);
+        return new Result(true, StatusCode.OK, "查询成功", new PageResult<CollectionRecord>(pageList.getTotalElements(), pageList.getContent()));
     }
 
     /**
@@ -239,7 +273,7 @@ public class ArticleController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "articleId", value = "文章Id", paramType = "query")
     })
-    public Result unCollection(@RequestParam String articleId){
+    public Result unCollection(@RequestParam String articleId) {
         collectionService.unCollection(articleId);
         collectionService.deleteCollection(articleId);
         return new Result(true, StatusCode.OK, "取消收藏成功");

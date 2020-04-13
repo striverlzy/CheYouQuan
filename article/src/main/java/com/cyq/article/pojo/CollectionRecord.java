@@ -29,7 +29,7 @@ public class CollectionRecord implements Serializable {
     private String collectionRecordId;
 
     @ApiModelProperty(notes = "文章id")
-    private String artilceId;
+    private String articleId;
 
     @ApiModelProperty(notes = "用户id")
     private String userId;
@@ -41,7 +41,7 @@ public class CollectionRecord implements Serializable {
     private String userName;
 
     @ApiModelProperty(notes = "文章标题")
-    private String artilceTitle;
+    private String articleTitle;
 
     @ApiModelProperty(notes = "收藏日期")
     private LocalDate createDate;
