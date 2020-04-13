@@ -4,20 +4,10 @@
     <list default="true" id="feeba843-e1d3-4d81-b089-8db0d51966bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dto/CollectionRecordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dto/CollectionRecordDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/CollectionRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/CollectionRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/controller/ArticleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dao/ArticleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dao/ArticleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dto/ArticleDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dto/ArticleDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/pojo/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/pojo/Article.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/ArticleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/ArticleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/CollectionService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/CollectionService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/target/classes/com/tensquare/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/target/classes/com/tensquare/user/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_web/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dto/CollectionRecordDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dto/CollectionRecordDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/pojo/CollectionRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/pojo/CollectionRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/CollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/CollectionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_web/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_web/target/classes/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="251" column="5" lean-forward="true" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="197" column="44" lean-forward="true" selection-start-line="197" selection-start-column="44" selection-end-line="197" selection-end-column="44" />
               <folding>
                 <element signature="e#5457#5466#0" expanded="true" />
                 <element signature="e#5531#5549#0" expanded="true" />
@@ -463,7 +453,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586749177420" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586749927729" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -731,7 +721,7 @@
       <workItem from="1586394914161" duration="1195000" />
       <workItem from="1586484173935" duration="9285000" />
       <workItem from="1586607514304" duration="5900000" />
-      <workItem from="1586738437764" duration="9830000" />
+      <workItem from="1586738437764" duration="10639000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1586313594015</created>
@@ -747,7 +737,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586510243305</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完善文章收藏功能，网关超时连接加长设置">
+      <created>1586749316629</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586749316630</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -783,7 +780,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="637242000" />
+    <option name="totallyTimeSpent" value="638051000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -796,8 +793,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.82978725" visible="true" weight="0.2174616" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82978725" visible="true" weight="0.17461601" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -808,7 +806,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995958" weight="0.29787233" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32978722" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4987874" visible="true" weight="0.59680283" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4987874" visible="true" weight="0.294849" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.73758864" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -884,7 +882,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="完善文章收藏功能，网关超时连接加长设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善文章收藏功能，网关超时连接加长设置" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tensquare_manager/src/main/java/com/tensquare/manager/filter/ManagerFilter.java">
@@ -1256,8 +1255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="251" column="5" lean-forward="true" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="197" column="44" lean-forward="true" selection-start-line="197" selection-start-column="44" selection-end-line="197" selection-end-column="44" />
           <folding>
             <element signature="e#5457#5466#0" expanded="true" />
             <element signature="e#5531#5549#0" expanded="true" />

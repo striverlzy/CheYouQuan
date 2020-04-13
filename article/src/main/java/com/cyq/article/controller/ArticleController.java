@@ -183,6 +183,7 @@ public class ArticleController {
             param.setSize(new Integer(10));
         }
         Page<Article> pageList = articleService.findSearch(param);
+        // 封装收藏信息到文章列表
         List<Article> articleList = new ArrayList<Article>();
         List<CollectionRecord> collectionList = new ArrayList<CollectionRecord>();
         Map map = new HashMap();
@@ -193,6 +194,7 @@ public class ArticleController {
             collectionRecordDTO.setUserId(articleList.get(i).getUserId());
             Page<CollectionRecord> pageCollection = collectionService.findRecordByUserId(collectionRecordDTO);
             collectionList = new PageResult<CollectionRecord>(pageCollection.getTotalElements(), pageCollection.getContent()).getRows();
+            // "1"表示收藏，"0"表示未收藏
             if (collectionList.size() > 0) {
                 articleList.get(i).setIsCollection("1");
             }else {
