@@ -69,7 +69,9 @@ public class ArticleController {
             @ApiImplicitParam(name = "articleId", value = "文章Id", paramType = "query")
     })
     public Result updateThumbup(@RequestParam String articleId) {
-        return new Result(true, StatusCode.OK, "点赞成功", articleService.updateThumbup(articleId));
+        articleService.updateThumbup(articleId);
+        articleService.isThumbup(articleId);
+        return new Result(true, StatusCode.OK, "点赞成功");
     }
 
     /**
@@ -84,7 +86,9 @@ public class ArticleController {
             @ApiImplicitParam(name = "articleId", value = "文章Id", paramType = "query")
     })
     public Result updateNotThumbup(@RequestParam String articleId) {
-        return new Result(true, StatusCode.OK, "取消点赞成功", articleService.updateNotThumbup(articleId));
+        articleService.updateNotThumbup(articleId);
+        articleService.notThumbup(articleId);
+        return new Result(true, StatusCode.OK, "取消点赞成功");
     }
 
 

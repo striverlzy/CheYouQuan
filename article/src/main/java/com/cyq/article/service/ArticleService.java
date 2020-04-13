@@ -100,6 +100,7 @@ public class ArticleService {
         article.setContent(param.getContent());
         article.setFilterContent(param.getFilterContent());
         article.setIsCollection("0");
+        article.setIsThumbup("0");
         article.setArticleState("1");
         article.setCommentTotal(0);
         article.setThumbup(0);
@@ -127,9 +128,18 @@ public class ArticleService {
         return articleDao.findAllByUserId(userId);
     }
 
-
     /**
      * 点赞
+     *
+     * @param articleId
+     * @return
+     */
+    public int isThumbup(String articleId) {
+        return articleDao.isThumbup(articleId);
+    }
+
+    /**
+     * 点赞数加一
      *
      * @param articleId
      * @return
@@ -139,10 +149,18 @@ public class ArticleService {
        return articleDao.updateThumbup(articleId);
     }
 
-
-
     /**
      * 取消点赞
+     *
+     * @param articleId
+     * @return
+     */
+    public int notThumbup(String articleId) {
+        return articleDao.notThumbup(articleId);
+    }
+
+    /**
+     * 点赞数减一
      *
      * @param articleId
      * @return

@@ -10,12 +10,12 @@ eureka:
   instance:
     prefer-ip-address: true
 ribbon:
-  ReadTimeout: 6000
-  ConnectTimeout: 6000
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 zuul:
   host:
-    connect-timeout-millis: 6000
-    socket-timeout-millis: 6000
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
   routes:
     tensquare-gathering: #活动
       path: /gathering/** #配置请求URL的请求规则
