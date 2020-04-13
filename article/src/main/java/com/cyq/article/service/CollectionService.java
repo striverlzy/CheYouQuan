@@ -82,7 +82,7 @@ public class CollectionService {
      * @return
      */
     public void deleteCollection(String articleId) {
-        articleDao.deleteById(articleId);
+        collectionRecordDao.deleteByArticleId(articleId);
     }
 
 
