@@ -55,7 +55,7 @@ public class CollectionService {
 
 
     /**
-     * 收藏更新
+     * 收藏数加一
      *
      * @param articleId
      * @return
@@ -64,9 +64,28 @@ public class CollectionService {
         return articleDao.collection(articleId);
     }
 
+    /**
+     * 收藏
+     *
+     * @param articleId
+     * @return
+     */
+    public int updateCollection(String articleId) {
+        return articleDao.updateCollection(articleId);
+    }
 
     /**
      * 取消收藏
+     *
+     * @param articleId
+     * @return
+     */
+    public int updateNotCollection(String articleId) {
+        return articleDao.updateNotCollection(articleId);
+    }
+
+    /**
+     * 收藏数减一
      *
      * @param articleId
      * @return

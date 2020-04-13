@@ -33,17 +33,29 @@ public interface ArticleDao extends JpaRepository<Article, String>, JpaSpecifica
     @Query(value = "update tb_article a set thumbup=thumbup-1 where article_id=?1", nativeQuery = true)
     public int updateNotThumbup(String articleId);
 
-    // 收藏
+    // 收藏数加一
     @Transactional
     @Modifying
     @Query(value = "update tb_article a set collection_total=collection_total+1 where article_id=?1", nativeQuery = true)
     public int collection(String articleId);
 
-    // 取消收藏
+    // 已收藏
+    @Transactional
+    @Modifying
+    @Query(value = "update tb_article a set is_collection='1' where article_id=?1", nativeQuery = true)
+    public int updateCollection(String articleId);
+
+    // 收藏数减一
     @Transactional
     @Modifying
     @Query(value = "update tb_article a set collection_total=collection_total-1 where article_id=?1", nativeQuery = true)
     public int unCollection(String articleId);
+
+    // 取消收藏
+    @Transactional
+    @Modifying
+    @Query(value = "update tb_article a set is_collection='0' where article_id=?1", nativeQuery = true)
+    public int updateNotCollection(String articleId);
 
 
     // 审核

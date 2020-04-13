@@ -183,27 +183,7 @@ public class ArticleController {
             param.setSize(new Integer(10));
         }
         Page<Article> pageList = articleService.findSearch(param);
-        // 封装收藏信息到文章列表
-        List<Article> articleList = new ArrayList<Article>();
-        List<CollectionRecord> collectionList = new ArrayList<CollectionRecord>();
-        Map map = new HashMap();
-        CollectionRecordDTO collectionRecordDTO = new CollectionRecordDTO();
-        articleList = new PageResult<Article>(pageList.getTotalElements(), pageList.getContent()).getRows();
-        for (int i = 0; i < articleList.size(); i++) {
-            collectionRecordDTO.setArticleId(articleList.get(i).getArticleId());
-            collectionRecordDTO.setUserId(articleList.get(i).getUserId());
-            Page<CollectionRecord> pageCollection = collectionService.findRecordByUserId(collectionRecordDTO);
-            collectionList = new PageResult<CollectionRecord>(pageCollection.getTotalElements(), pageCollection.getContent()).getRows();
-            // "1"表示收藏，"0"表示未收藏
-            if (collectionList.size() > 0) {
-                articleList.get(i).setIsCollection("1");
-            }else {
-                articleList.get(i).setIsCollection("0");
-            }
-        }
-        map.put("rows",articleList);
-        map.put("total",new PageResult<Article>(pageList.getTotalElements(), pageList.getContent()).getTotal());
-        return new Result(true, StatusCode.OK, "查询成功", map);
+        return new Result(true, StatusCode.OK, "查询成功", new PageResult<Article>(pageList.getTotalElements(), pageList.getContent()));
     }
 
     /**
@@ -248,6 +228,7 @@ public class ArticleController {
     public Result collection(@RequestBody CollectionRecordDTO collectionRecordDTO) {
         collectionService.addCollectionRecord(collectionRecordDTO);
         collectionService.collection(collectionRecordDTO.getArticleId());
+        collectionService.updateCollection(collectionRecordDTO.getArticleId());
         return new Result(true, StatusCode.OK, "收藏成功");
     }
 
@@ -278,6 +259,7 @@ public class ArticleController {
     public Result unCollection(@RequestParam String articleId) {
         collectionService.unCollection(articleId);
         collectionService.deleteCollection(articleId);
+        collectionService.updateNotCollection(articleId);
         return new Result(true, StatusCode.OK, "取消收藏成功");
     }
 

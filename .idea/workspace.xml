@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="feeba843-e1d3-4d81-b089-8db0d51966bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/CollectionRecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/CollectionRecordDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/controller/ArticleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dao/CollectionRecordDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/dao/CollectionRecordDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/CollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/article/target/classes/com/cyq/article/service/CollectionService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,75 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/Article.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="279" column="30" lean-forward="true" selection-start-line="279" selection-start-column="30" selection-end-line="279" selection-end-column="30" />
-              <folding>
-                <element signature="e#5457#5466#0" expanded="true" />
-                <element signature="e#5531#5549#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensquare_web/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-251">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-              <folding>
-                <element signature="e#1972#1973#0" expanded="true" />
-                <element signature="e#2029#2030#0" expanded="true" />
-                <element signature="e#2157#2158#0" expanded="true" />
-                <element signature="e#2205#2206#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/dto/CollectionRecordDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="26" />
+            <state relative-caret-position="-44">
+              <caret line="185" column="22" lean-forward="true" selection-start-line="185" selection-start-column="22" selection-end-line="185" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -133,26 +71,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="38" column="120" selection-start-line="38" selection-start-column="100" selection-end-line="38" selection-end-column="120" />
+            <state relative-caret-position="75">
+              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/CollectionRecordDao.java">
+        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/ArticleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="-1700">
+              <caret line="96" column="43" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="43" />
+              <folding>
+                <element signature="e#1664#1675#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/CollectionRecord.java">
+        <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/java/com/tensquare/user/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="-154">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
+              <folding>
+                <element signature="e#1963#1964#0" expanded="true" />
+                <element signature="e#2018#2019#0" expanded="true" />
+                <element signature="e#2161#2162#0" expanded="true" />
+                <element signature="e#2225#2226#0" expanded="true" />
+                <element signature="e#1972#1973#0" expanded="true" />
+                <element signature="e#2029#2030#0" expanded="true" />
+                <element signature="e#2157#2158#0" expanded="true" />
+                <element signature="e#2221#2222#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,7 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>searchMap</find>
       <find>GatheringDao</find>
       <find>tb_gathering</find>
       <find>sql.Date</find>
@@ -201,6 +160,7 @@
       <find>RibbonClient</find>
       <find>httpclient</find>
       <find>Page&lt;CollectionRecord&gt;</find>
+      <find>=&quot;1</find>
     </findStrings>
     <replaceStrings>
       <replace>-</replace>
@@ -214,7 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/article/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/tensquare_sms/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/tensquare_user/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/tensquare_gathering/src/main/resources/application.yml" />
@@ -257,14 +216,15 @@
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dto/ArticleDTO.java" />
         <option value="$PROJECT_DIR$/tensquare_user/src/main/java/com/tensquare/user/controller/UserController.java" />
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/Article.java" />
-        <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java" />
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/ArticleService.java" />
         <option value="$PROJECT_DIR$/tensquare_web/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dto/CollectionRecordDTO.java" />
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/CollectionRecord.java" />
-        <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/CollectionRecordDao.java" />
+        <option value="$PROJECT_DIR$/tensquare_gathering/src/main/java/com/tensquare/gathering/service/GatheringService.java" />
+        <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java" />
         <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java" />
+        <option value="$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java" />
       </list>
     </option>
   </component>
@@ -387,6 +347,51 @@
               <item name="article" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tensquare_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="tensquare_user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -402,7 +407,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586759969441" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586772298609" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -670,7 +675,7 @@
       <workItem from="1586394914161" duration="1195000" />
       <workItem from="1586484173935" duration="9285000" />
       <workItem from="1586607514304" duration="5900000" />
-      <workItem from="1586738437764" duration="16997000" />
+      <workItem from="1586738437764" duration="22705000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1586313594015</created>
@@ -700,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586749974942</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="收藏功能问题调整">
+      <created>1586760253014</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586760253014</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -736,7 +748,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="644409000" />
+    <option name="totallyTimeSpent" value="650117000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,8 +761,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82978725" visible="true" weight="0.23686337" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.82978725" visible="true" weight="0.25707355" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -761,7 +774,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995958" weight="0.29787233" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32978722" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4987874" visible="true" weight="0.27175844" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4987874" visible="true" weight="0.053285968" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.73758864" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -839,34 +852,10 @@
     <MESSAGE value="update" />
     <MESSAGE value="完善文章收藏功能，网关超时连接加长设置" />
     <MESSAGE value="收藏方法添加注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="收藏方法添加注释" />
+    <MESSAGE value="收藏功能问题调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="收藏功能问题调整" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tensquare_manager/src/main/java/com/tensquare/manager/filter/ManagerFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensquare_friend/src/main/java/com/tensquare/friend/client/UserClient.java" />
-    <entry file="file://$PROJECT_DIR$/tensquare_base/src/main/java/com/tensquare/base/BaseApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensquare_base/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/java/com/tensquare/user/filter/JwtFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/java/com/tensquare/user/service/AdminService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1007">
@@ -1121,31 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="96" column="43" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="43" />
-          <folding>
-            <element signature="e#1664#1675#0" expanded="true" />
-            <element signature="e#3986#3987#0" expanded="true" />
-            <element signature="e#4051#4052#0" expanded="true" />
-            <element signature="e#4185#4186#0" expanded="true" />
-            <element signature="e#4242#4243#0" expanded="true" />
-            <element signature="e#4384#4385#0" expanded="true" />
-            <element signature="e#4441#4442#0" expanded="true" />
-            <element signature="e#4589#4590#0" expanded="true" />
-            <element signature="e#4650#4651#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../maven/apache-maven-3.6.0/respository/org/springframework/cloud/spring-cloud-netflix-zuul/2.0.0.M8/spring-cloud-netflix-zuul-2.0.0.M8.jar!/org/springframework/cloud/netflix/zuul/filters/route/RibbonRoutingFilter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -1181,24 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="279" column="30" lean-forward="true" selection-start-line="279" selection-start-column="30" selection-end-line="279" selection-end-column="30" />
-          <folding>
-            <element signature="e#5457#5466#0" expanded="true" />
-            <element signature="e#5531#5549#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="38" column="120" selection-start-line="38" selection-start-column="100" selection-end-line="38" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/pojo/CollectionRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-160">
@@ -1208,21 +1154,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/CollectionRecordDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="189">
           <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_gathering/src/main/java/com/tensquare/gathering/dao/GatheringDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_gathering/src/main/java/com/tensquare/gathering/controller/GatheringController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1295">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_gathering/src/main/java/com/tensquare/gathering/dto/GatheringDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-577">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_gathering/src/main/java/com/tensquare/gathering/service/GatheringService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4680">
+          <caret line="259" column="29" lean-forward="true" selection-start-line="259" selection-start-column="29" selection-end-line="259" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/java/com/tensquare/user/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/dao/ArticleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1700">
+          <caret line="96" column="43" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="43" />
+          <folding>
+            <element signature="e#1664#1675#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/service/CollectionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="615">
+          <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding>
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#2018#2019#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
             <element signature="e#1972#1973#0" expanded="true" />
             <element signature="e#2029#2030#0" expanded="true" />
             <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2205#2206#0" expanded="true" />
+            <element signature="e#2221#2222#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article/src/main/java/com/cyq/article/controller/ArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="185" column="22" lean-forward="true" selection-start-line="185" selection-start-column="22" selection-end-line="185" selection-end-column="22" />
         </state>
       </provider>
     </entry>
