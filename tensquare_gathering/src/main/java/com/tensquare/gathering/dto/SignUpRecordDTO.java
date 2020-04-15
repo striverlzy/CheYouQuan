@@ -21,8 +21,6 @@ import java.time.LocalDate;
 @ApiModel(value = "SignUpRecordDTO", description = "报名参数对象")
 public class SignUpRecordDTO {
 
-    @Id
-    private String signRecordId;
 
     @ApiModelProperty(notes = "活动id")
     private String gatheringId;

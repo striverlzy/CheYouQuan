@@ -63,6 +63,9 @@ public class GatheringDTO {
     @ApiModelProperty(notes = "活动状态，0：最新活动，1：最热活动")
     private String isHost;
 
+    @ApiModelProperty(notes = "活动状态：0：未结束活动，1：已结束活动")
+    private String state;
+
     @ApiModelProperty(value = "页数")
     private Integer page = 1;
 

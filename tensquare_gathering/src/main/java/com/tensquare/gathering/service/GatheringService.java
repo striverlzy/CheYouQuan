@@ -6,6 +6,7 @@ import com.tensquare.gathering.dto.GatheringDTO;
 import com.tensquare.gathering.dto.SignUpRecordDTO;
 import com.tensquare.gathering.pojo.Gathering;
 import com.tensquare.gathering.pojo.SignUpRecord;
+import entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -101,10 +102,14 @@ public class GatheringService {
                 if (params.getEndDate() != null && !"".equals(params.getEndDate())) {
                     predicateList.add(cb.lessThanOrEqualTo(root.get("endDate").as(LocalDate.class), LocalDate.parse(params.getEndDate(), dateTimeFormatter)));
                 }
+                if (params.getState().equals("1")) {
+                    predicateList.add(cb.equal(root.get("state").as(String.class), params.getState()));
+                }
                 List<Order> orders = new ArrayList<>();
-                if(params.getIsHost().equals("0")){
+                if (params.getIsHost().equals("0")) {
                     orders.add(cb.desc(root.get("createDate").as(LocalDateTime.class)));
-                }else {
+                }
+                if (params.getIsHost().equals("1")) {
                     orders.add(cb.desc(root.get("signNum").as(int.class)));
                 }
                 query.orderBy(orders);
@@ -125,6 +130,14 @@ public class GatheringService {
     public List<Gathering> findByGatheringId(String gatheringId) {
 
         return gatheringDao.findByGatheringId(gatheringId);
+    }
+
+    /**
+     * 活动结束更新
+     * @param gatheringId
+     */
+    public void endGathering(String gatheringId){
+        gatheringDao.endGathering(gatheringId);
     }
 
     /**
@@ -173,6 +186,9 @@ public class GatheringService {
                 if (!StringUtils.isEmpty(signUpRecord.getUserId())) {
                     predicateList.add(cb.equal(root.get("userId").as(String.class), signUpRecord.getUserId()));
                 }
+                if (!StringUtils.isEmpty(signUpRecord.getGatheringId())) {
+                    predicateList.add(cb.equal(root.get("gatheringId").as(String.class), signUpRecord.getGatheringId()));
+                }
                 List<Order> orders = new ArrayList<>();
                 orders.add(cb.desc(root.get("createDate").as(LocalDateTime.class)));
                 query.orderBy(orders);
@@ -206,6 +222,25 @@ public class GatheringService {
     }
 
     /**
+     * 更新报名人数
+     */
+    public void updateSignIds(String userId, String gatheringId) {
+        SignUpRecordDTO param = new SignUpRecordDTO();
+        param.setGatheringId(gatheringId);
+        param.setPage(1);
+        param.setSize(1);
+        String signId = null;
+        Page<SignUpRecord> pageList = this.findRecordByUserId(param);
+        if(pageList.getTotalElements() == 0){
+            signId = userId;
+            gatheringDao.updateSignIds(signId,gatheringId);
+        }else {
+            signId = "," + userId;
+            gatheringDao.updateConcatSignIds(signId, gatheringId);
+        }
+    }
+
+    /**
      * 发布活动
      *
      * @param param
@@ -227,6 +262,7 @@ public class GatheringService {
         gathering.setGatheringImage(param.getGatheringImage());
         gathering.setSignIds(param.getSignIds());
         gathering.setSignEnd(signEnd);
+        gathering.setState("0");
         gathering.setSponsor(param.getSponsor());
         gathering.setSignNum(0);
         gathering.setCreateDate(LocalDateTime.now());
@@ -257,7 +293,11 @@ public class GatheringService {
         gathering.setSignIds(param.getSignIds());
         gathering.setSignEnd(signEnd);
         gathering.setSponsor(param.getSponsor());
-        gathering.setSignNum(param.getSignNum());
+        if (param.getSignNum() == null) {
+            gathering.setSignNum(0);
+        } else {
+            gathering.setSignNum(param.getSignNum());
+        }
         gathering.setCreateDate(LocalDateTime.now());
         gatheringDao.save(gathering);
     }

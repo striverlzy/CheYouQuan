@@ -38,4 +38,30 @@ public interface GatheringDao extends JpaRepository<Gathering,String>,JpaSpecifi
     public int signUp(String gatheringId);
 
 
+    /**
+     * 更新报名人数
+     * @param gatheringId
+     * @return
+     */
+
+    @Transactional
+    @Modifying
+    @Query(value = "update tb_gathering a set sign_ids=concat(sign_ids,?1) where gathering_id=?2",nativeQuery = true)
+    public void updateConcatSignIds(String sign_ids,String gatheringId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "update tb_gathering a set sign_ids=?1 where gathering_id=?2",nativeQuery = true)
+    public void updateSignIds(String sign_ids,String gatheringId);
+
+
+    /**
+     * 活动结束更新状态
+     * @param gatheringId
+     */
+    @Transactional
+    @Modifying
+    @Query(value = "update tb_gathering a set state='1' where gathering_id=?1",nativeQuery = true)
+    public void endGathering(String gatheringId);
+
 }

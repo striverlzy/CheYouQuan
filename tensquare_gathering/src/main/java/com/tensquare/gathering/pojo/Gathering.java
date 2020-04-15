@@ -66,6 +66,8 @@ public class Gathering implements Serializable{
 	@ApiModelProperty(notes = "报名人")
 	private String signIds;
 
+	@ApiModelProperty(notes = "活动状态：0未结束活动，1已结束活动")
+	private String state;
 
 	@ApiModelProperty(notes = "创建时间")
 	private LocalDateTime createDate;
