@@ -21,6 +21,7 @@
         <module>tensquare_config</module>
         <module>article</module>
         <module>question</module>
+        <module>car_work</module>
     </modules>
     <packaging>pom</packaging>
 
