@@ -71,14 +71,14 @@ public class QuestionService {
                 }
                 List<Order> orders = new ArrayList<>();
                 if ("1".equals(param.getSearchState())) {  // 最新问答
-                    orders.add(cb.desc(root.get("createDate")));
+                    orders.add(cb.desc(root.get("createDate").as(LocalDateTime.class)));
                 }
                 if ("2".equals(param.getSearchState())) { // 最热问答
                     orders.add(cb.desc(root.get("replyTotal")));
                 }
                 if ("3".equals(param.getSearchState())) { // 等待回答
                     predicateList.add(cb.equal(root.get("replyTotal"), 0));
-                    orders.add(cb.desc(root.get("createDate")));
+                    orders.add(cb.desc(root.get("createDate").as(LocalDateTime.class)));
                 }
                 query.orderBy(orders);
                 return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));

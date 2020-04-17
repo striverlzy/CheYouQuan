@@ -61,6 +61,9 @@ public class ArticleService {
                 if (param.getCategoryId() != null && !"".equals(param.getCategoryId())) {
                     predicateList.add(cb.equal(root.get("categoryId").as(String.class), param.getCategoryId()));
                 }
+                if (param.getUserId() != null && !"".equals(param.getUserId())) {
+                    predicateList.add(cb.equal(root.get("userId").as(String.class), param.getUserId()));
+                }
                 // filterContent
                 if (param.getFilterContent() != null && !"".equals(param.getFilterContent())) {
                     predicateList.add(cb.like(root.get("filterContent").as(String.class), "%" + (String) param.getFilterContent() + "%"));
