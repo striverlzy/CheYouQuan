@@ -27,42 +27,10 @@ public class CarrecommendService {
     @Autowired
     private CarrecommendDAO carrecommendDAO;
 
-    /**
-     * 条件查询+分页
-     *
-     * @param param
-     * @return
-     */
-    public Page<Carrecommend> findSearch(CarrecommendDTO param) {
-        Specification<Carrecommend> specification = createSpecification(param);
-        PageRequest pageRequest = PageRequest.of(param.getPage() - 1, param.getSize());
-        return carrecommendDAO.findAll(specification, pageRequest);
+
+    public Carrecommend findByCardParam(CarrecommendDTO params){
+        return carrecommendDAO.findByCardParam(params.getPrice(),params.getCarType(),params.getCagetoryName());
     }
 
-    /**
-     * 条件查询
-     *
-     * @param param * @return
-     */
-    private Specification<Carrecommend> createSpecification(CarrecommendDTO param) {
-        return new Specification<Carrecommend>() {
-            public Predicate toPredicate(Root<Carrecommend> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                List<Predicate> predicateList = new ArrayList<Predicate>();
-
-                if (param.getPrice() != null && !"".equals(param.getPrice())) {
-                    predicateList.add(cb.equal(root.get("price").as(String.class), param.getPrice()));
-                }
-
-                if (param.getCarType() != null && !"".equals(param.getCarType())) {
-                    predicateList.add(cb.equal(root.get("carType").as(String.class), param.getCarType()));
-                }
-
-                if (param.getCagetoryName() != null && !"".equals(param.getCagetoryName())) {
-                    predicateList.add(cb.equal(root.get("cagetoryName").as(String.class), param.getCagetoryName()));
-                }
-                return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
-            }
-        };
-    }
 
 }

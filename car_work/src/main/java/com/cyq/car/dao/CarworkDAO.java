@@ -1,8 +1,10 @@
 package com.cyq.car.dao;
 
 import com.cyq.car.pojo.Carwork;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * @Author：liuzhongyu
@@ -11,6 +13,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  */
 public interface CarworkDAO extends JpaRepository<Carwork, String>, JpaSpecificationExecutor<Carwork> {
 
-
+    @Query(value = "select * from tb_car_work where id_card=?1 and card_number=?2 and card_type=?3 and card_vin=?4 and card_engine=?5",nativeQuery=true)
+    Carwork findByCardParam(String idCard,String cardNumber,String cardType,String cardVin,String cardEngine);
 
 }

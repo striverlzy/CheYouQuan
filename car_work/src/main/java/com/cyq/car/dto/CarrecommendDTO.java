@@ -30,13 +30,4 @@ public class CarrecommendDTO {
 
     @ApiModelProperty(notes = "系列")
     private String cagetoryName;
-
-    @ApiModelProperty(notes = "推荐车")
-    private String cars;
-
-    @ApiModelProperty(value = "页数")
-    private Integer page = 1;
-
-    @ApiModelProperty(value = "条数")
-    private Integer size = 10;
 }

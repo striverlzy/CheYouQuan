@@ -30,49 +30,8 @@ public class CarworkService {
     @Autowired
     private IdWorker idWorker;
 
-
-    /**
-     * 条件查询+分页
-     *
-     * @param param
-     * @return
-     */
-    public Page<Carwork> findSearch(CarworkDTO param) {
-        Specification<Carwork> specification = createSpecification(param);
-        PageRequest pageRequest = PageRequest.of(param.getPage() - 1, param.getSize());
-        return carworkDAO.findAll(specification, pageRequest);
+    public Carwork findByCardParam(CarworkDTO params){
+        return carworkDAO.findByCardParam(params.getIdCard(),params.getCardNumber(),params.getCardType(),params.getCardVin(),params.getCardEngine());
     }
 
-    /**
-     * 条件查询
-     *
-     * @param param * @return
-     */
-    private Specification<Carwork> createSpecification(CarworkDTO param) {
-        return new Specification<Carwork>() {
-            public Predicate toPredicate(Root<Carwork> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                List<Predicate> predicateList = new ArrayList<Predicate>();
-
-                if (param.getCardEngine() != null && !"".equals(param.getCardEngine())) {
-                    predicateList.add(cb.equal(root.get("cardEngine").as(String.class), param.getCardEngine()));
-                }
-
-                if (param.getCardNumber() != null && !"".equals(param.getCardNumber())) {
-                    predicateList.add(cb.equal(root.get("cardNumber").as(String.class), param.getCardNumber()));
-                }
-
-                if (param.getCardType() != null && !"".equals(param.getCardType())) {
-                    predicateList.add(cb.equal(root.get("cardType").as(String.class), param.getCardType()));
-                }
-                if (param.getCardVin() != null && !"".equals(param.getCardVin())) {
-                    predicateList.add(cb.equal(root.get("cardVin").as(String.class), param.getCardVin()));
-                }
-                if (param.getIdCard() != null && !"".equals(param.getIdCard())) {
-                    predicateList.add(cb.equal(root.get("idCard").as(String.class), param.getIdCard()));
-                }
-
-                return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
-            }
-        };
-    }
 }

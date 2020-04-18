@@ -43,14 +43,8 @@ public class CarworkController {
     @ApiOperation(value = "推荐分页+多条件查询", notes = "推荐分页+多条件查询")
     @PostMapping(value = "/carrecommend/search")
     public Result findCarRecommendSearch(@RequestBody CarrecommendDTO param) {
-        if (param.getPage() == null) {
-            param.setPage(new Integer(1));
-        }
-        if (param.getSize() == null) {
-            param.setSize(new Integer(10));
-        }
-        Page<Carrecommend> pageList = carrecommendService.findSearch(param);
-        return new Result(true, StatusCode.OK, "查询成功", new PageResult<Carrecommend>(pageList.getTotalElements(), pageList.getContent()));
+
+        return new Result(true, StatusCode.OK, "查询成功",carrecommendService.findByCardParam(param));
     }
 
 
@@ -58,19 +52,12 @@ public class CarworkController {
      * 推荐
      *
      * @param param 查询条件封装
-     * @return 分页结果
+     * @return 结果
      */
     @ApiOperation(value = "推荐分页+多条件查询", notes = "推荐分页+多条件查询")
     @PostMapping(value = "/carwork/search")
     public Result findCarWorkSearch(@RequestBody CarworkDTO param) {
-        if (param.getPage() == null) {
-            param.setPage(new Integer(1));
-        }
-        if (param.getSize() == null) {
-            param.setSize(new Integer(10));
-        }
-        Page<Carwork> pageList = carworkService.findSearch(param);
-        return new Result(true, StatusCode.OK, "查询成功", new PageResult<Carwork>(pageList.getTotalElements(), pageList.getContent()));
+        return new Result(true, StatusCode.OK, "查询成功", carworkService.findByCardParam(param));
     }
 
 }
