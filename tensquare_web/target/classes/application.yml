@@ -25,6 +25,9 @@ zuul:
     article: #文章
       path: /article/** #配置请求URL的请求规则
       serviceId: article #指定Eureka注册中心中的服务id
+    car-work: #文章
+      path: /carwork/** #配置请求URL的请求规则
+      serviceId: car-work #指定Eureka注册中心中的服务id
     question: #文章
       path: /question/** #配置请求URL的请求规则
       serviceId: question #指定Eureka注册中心中的服务id

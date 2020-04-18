@@ -8,6 +8,8 @@ spring:
     url: jdbc:mysql://47.100.25.217:3306/cyq?characterEncoding=UTF-8&useUnicode=true&useSSL=false
     username: root
     password: 123456
+    hikari:
+      max-lifetime: 1200000
   jpa: 
     database: MySQL
     show-sql: true
