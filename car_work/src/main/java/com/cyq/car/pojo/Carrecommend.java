@@ -34,7 +34,7 @@ public class Carrecommend implements Serializable {
     private String carType;
 
     @ApiModelProperty(notes = "系列")
-    private String cagetoryName;
+    private String categoryName;
 
     @ApiModelProperty(notes = "推荐车")
     private String cars;

@@ -31,8 +31,6 @@ public class CarworkDTO {
     @ApiModelProperty(notes = "车型")
     private String cardType;
 
-    @ApiModelProperty(notes = "车架号")
-    private String cardVin;
 
     @ApiModelProperty(notes = "发动机")
     private String cardEngine;

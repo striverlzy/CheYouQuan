@@ -29,7 +29,7 @@ public class CarrecommendService {
 
 
     public Carrecommend findByCardParam(CarrecommendDTO params){
-        return carrecommendDAO.findByCardParam(params.getPrice(),params.getCarType(),params.getCagetoryName());
+        return carrecommendDAO.findByCardParam(params.getPrice(),params.getCarType(),params.getCategoryName());
     }
 
 

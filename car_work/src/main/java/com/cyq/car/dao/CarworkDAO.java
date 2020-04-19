@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface CarworkDAO extends JpaRepository<Carwork, String>, JpaSpecificationExecutor<Carwork> {
 
-    @Query(value = "select * from tb_car_work where id_card=?1 and card_number=?2 and card_type=?3 and card_vin=?4 and card_engine=?5",nativeQuery=true)
-    Carwork findByCardParam(String idCard,String cardNumber,String cardType,String cardVin,String cardEngine);
+    @Query(value = "select * from tb_car_work where id_card=?1 and card_number=?2 and card_type=?3 and card_engine=?4",nativeQuery=true)
+    Carwork findByCardParam(String idCard,String cardNumber,String cardType,String cardEngine);
 
 }

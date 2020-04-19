@@ -31,7 +31,7 @@ public class CarworkService {
     private IdWorker idWorker;
 
     public Carwork findByCardParam(CarworkDTO params){
-        return carworkDAO.findByCardParam(params.getIdCard(),params.getCardNumber(),params.getCardType(),params.getCardVin(),params.getCardEngine());
+        return carworkDAO.findByCardParam(params.getIdCard(),params.getCardNumber(),params.getCardType(),params.getCardEngine());
     }
 
 }

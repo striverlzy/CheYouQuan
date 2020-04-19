@@ -29,5 +29,5 @@ public class CarrecommendDTO {
     private String carType;
 
     @ApiModelProperty(notes = "系列")
-    private String cagetoryName;
+    private String categoryName;
 }
