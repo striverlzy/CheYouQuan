@@ -207,6 +207,22 @@ public class ArticleController {
         return new Result(true, StatusCode.OK, "根据文章id查询成功", articleService.findByArticleId(articleId));
     }
 
+    /**
+     * 根据文章id查询评论
+     *
+     * @param articleId
+     * @return
+     */
+    @ApiOperation(value = "根据文章id查询评论", notes = "根据文章id查询评论")
+    @GetMapping(value = "/findCommentByArticleId")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "articleId", value = "文章Id", paramType = "query")
+    })
+    public Result findCommentByArticleId(@RequestParam String articleId) {
+        return new Result(true, StatusCode.OK, "根据文章id查询评论", commentService.findByArticleId(articleId));
+    }
+
+
 
     /**
      * 评论

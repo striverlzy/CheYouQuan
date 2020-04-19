@@ -14,6 +14,7 @@ import util.IdWorker;
 import javax.persistence.criteria.*;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,7 +84,7 @@ public class CommentService {
         comment.setCommentId(idWorker.nextId() + "");
         comment.setUserImage(param.getUserImage());
         comment.setUserName(param.getUserName());
-        comment.setCommentDate(LocalDate.now());
+        comment.setCommentDate(LocalDateTime.now());
         comment.setUserId(param.getUserId());
         comment.setArticleId(param.getArticleId());
         comment.setContent(param.getContent());

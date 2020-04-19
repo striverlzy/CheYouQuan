@@ -21,7 +21,7 @@ public interface CommentDao extends JpaRepository<Comment,String>, JpaSpecificat
      * @param articleId
      * @return
      */
-    @Query(value = "select comment_id,article_id,user_id,like_total,content,comment_date from tb_comment where article_id = ?1",nativeQuery = true)
+    @Query(value = "select comment_id,article_id,user_id,user_image,thumbup,content,user_name,content,comment_date from tb_comment where article_id = ?1 order by comment_date desc",nativeQuery = true)
     public List<Comment> findByArticleId(String articleId);
 
 

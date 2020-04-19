@@ -1,5 +1,6 @@
 package com.cyq.article.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -51,7 +52,8 @@ public class Comment implements Serializable {
     private String content;
 
     @ApiModelProperty(notes = "评论时间")
-    private LocalDate commentDate;
+    @JsonFormat(pattern="yyyy年MM月dd日",timezone="GMT+8")
+    private LocalDateTime commentDate;
 
 
 }
