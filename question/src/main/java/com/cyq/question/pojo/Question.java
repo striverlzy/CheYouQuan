@@ -59,7 +59,7 @@ public class Question implements Serializable {
     private int thumbup;
 
     @ApiModelProperty(notes = "创建时间")
-    @JsonFormat(pattern="yyyy年MM月dd日",timezone="GMT+8")
+    @JsonFormat(pattern="MM月dd日",timezone="GMT+8")
     private LocalDateTime createDate;
 
     @ApiModelProperty(notes = "状态：0为等待回答，1为已回答")
