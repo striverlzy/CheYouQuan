@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @Author：liuzhongyu
  * @Date: 2020/4/2 18:08
@@ -14,6 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
  */
 public interface QuestionDao extends JpaRepository<Question, String>, JpaSpecificationExecutor<Question> {
 
+
+    @Query(value = "select question_id,user_id,user_name,user_image,category_id,category_name,title,content,reply_total,thumbup,create_date,state from tb_question where question_id = ?1", nativeQuery = true)
+    public Question findByQuestionId(String questionId);
 
     // 点赞
     @Modifying
@@ -33,4 +38,9 @@ public interface QuestionDao extends JpaRepository<Question, String>, JpaSpecifi
     public default int updateState(String questionId) {
         return 0;
     }
+
+    // 已回答
+    @Modifying
+    @Query(value = "update tb_question a set reply_total=reply_total+1 where question_id=?1", nativeQuery = true)
+    public int updateReplyTotal(String questionId);
 }

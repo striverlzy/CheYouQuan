@@ -1,5 +1,6 @@
 package com.cyq.question.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -47,6 +48,7 @@ public class Reply implements Serializable {
     private String content;
 
     @ApiModelProperty(notes = "评论时间")
+    @JsonFormat(pattern="yyyy年MM月dd日",timezone="GMT+8")
     private LocalDateTime replyDate;
 
 }

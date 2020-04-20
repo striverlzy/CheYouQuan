@@ -46,6 +46,7 @@ public class ReplyController {
     public Result reply(@RequestBody ReplyDto param) {
         replyService.reply(param);
         questionService.updateState(param.getQuestionId());
+        questionService.updateReplyTotal(param.getQuestionId());
         return new Result(true, StatusCode.OK, "回答成功");
     }
 

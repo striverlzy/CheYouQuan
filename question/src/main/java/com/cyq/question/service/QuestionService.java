@@ -121,6 +121,17 @@ public class QuestionService {
     }
 
     /**
+     * 根据Id查询
+     *
+     * @param questionId
+     * @return
+     */
+    @Transactional
+    public Question findByQuestionId(String questionId) {
+        return questionDao.findByQuestionId(questionId);
+    }
+
+    /**
      * 回答问题
      *
      * @param questionId
@@ -131,7 +142,16 @@ public class QuestionService {
        return   questionDao.updateState(questionId);
     }
 
-
+    /**
+     * 评论加一
+     *
+     * @param questionId
+     * @return
+     */
+    @Transactional
+    public int updateReplyTotal(String questionId) {
+        return questionDao.updateReplyTotal(questionId);
+    }
     /**
      * 发布问答
      *

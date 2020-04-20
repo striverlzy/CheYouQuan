@@ -124,6 +124,7 @@ public class ReplyService {
         Reply reply = new Reply();
         reply.setReplyId(idWorker.nextId() + "");
         reply.setUserId(param.getUserId());
+        reply.setQuestionId(param.getQuestionId());
         reply.setUserName(param.getUserName());
         reply.setUserImage(param.getUserImage());
         reply.setContent(param.getContent());

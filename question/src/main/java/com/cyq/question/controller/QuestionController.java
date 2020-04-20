@@ -46,6 +46,22 @@ public class QuestionController {
         return new Result(true, StatusCode.OK, "查询成功", new PageResult<Question>(pageList.getTotalElements(), pageList.getContent()));
     }
 
+    /**
+     * 根据Id查询
+     *
+     * @param questionId
+     * @return
+     */
+    @ApiOperation(value = "根据Id查询", notes = "根据Id查询")
+    @GetMapping(value = "/findByQuestionId")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "questionId", value = "问题Id", paramType = "query")
+    })
+    public Result findByQuestionId(@RequestParam String questionId) {
+        return new Result(true, StatusCode.OK, "根据Id查询成功",questionService.findByQuestionId(questionId));
+    }
+
+
 
 
     /**
