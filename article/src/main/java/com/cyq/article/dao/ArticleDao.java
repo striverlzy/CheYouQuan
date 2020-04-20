@@ -23,7 +23,7 @@ public interface ArticleDao extends JpaRepository<Article, String>, JpaSpecifica
     @Query(value = "select count(*) from tb_article", nativeQuery = true)
     public int countArticle();
 
-    @Query(value = "select count(*) from tb_article where category_id=1?", nativeQuery = true)
+    @Query(value = "select count(*) from tb_article where category_id=?1", nativeQuery = true)
     public int countByCategory(String CategoryId);
 
 

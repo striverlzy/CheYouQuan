@@ -99,7 +99,9 @@ public class ArticleService {
                 }
                 // articleState
                 if (param.getArticleState() != null && !"".equals(param.getArticleState())) {
-                    predicateList.add(cb.equal(root.get("articleState").as(String.class), param.getArticleState()));
+                    predicateList.add(cb.equal(root.get("articleState"), param.getArticleState()));
+                }else {
+                    predicateList.add(cb.notEqual(root.get("articleState").as(String.class), "0"));
                 }
 
                 List<Order> orders = new ArrayList<>();
@@ -129,7 +131,7 @@ public class ArticleService {
         article.setFilterContent(param.getFilterContent());
         article.setIsCollection("0");
         article.setIsThumbup("0");
-        article.setArticleState("1");
+        article.setArticleState("0");
         article.setCommentTotal(0);
         article.setThumbup(0);
         article.setCollectionTotal(0);
