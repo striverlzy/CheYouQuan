@@ -17,6 +17,11 @@ import java.util.List;
  */
 public interface CollectionRecordDao extends JpaRepository<CollectionRecord,String>, JpaSpecificationExecutor<CollectionRecord> {
 
+
+    @Query(value = "select count(*) from collection_record", nativeQuery = true)
+    public int countCollection();
+
+
     @Modifying
     @Query(value = "delete from collection_record where article_id = ?1", nativeQuery = true)
     @Transactional

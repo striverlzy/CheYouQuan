@@ -70,7 +70,13 @@ public class UserService {
     }
 
 
-
+    /**
+     * 获取问答数
+     * @return
+     */
+    public int countUser(){
+        return userDao.countUser();
+    }
 
     /**
      * 根据手机号和密码查询用户（用户登录）

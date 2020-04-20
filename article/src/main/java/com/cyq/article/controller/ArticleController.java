@@ -4,8 +4,10 @@ import com.cyq.article.dto.ArticleDTO;
 import com.cyq.article.dto.CollectionRecordDTO;
 import com.cyq.article.dto.CommentDTO;
 import com.cyq.article.pojo.Article;
+import com.cyq.article.pojo.Category;
 import com.cyq.article.pojo.CollectionRecord;
 import com.cyq.article.service.ArticleService;
+import com.cyq.article.service.CategoryService;
 import com.cyq.article.service.CollectionService;
 import com.cyq.article.service.CommentService;
 import entity.PageResult;
@@ -40,6 +42,9 @@ public class ArticleController {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private CategoryService categoryService;
 
 
     /**
@@ -283,6 +288,43 @@ public class ArticleController {
         return new Result(true, StatusCode.OK, "取消收藏成功");
     }
 
+
+    /**
+     * 统计分析
+     *
+     * @return
+     */
+    @ApiOperation(value = "统计分析", notes = "统计分析")
+    @GetMapping(value = "/count/article")
+    public Result countArticle() {
+        int countArticle = articleService.countArticle();
+        int countThumbup = articleService.countThumbup();
+        int countComment = commentService.countComment();
+        int countCollection = collectionService.countCollection();
+        List countName = new ArrayList();
+        List countList = new ArrayList();
+        countName.add("文章数");
+        countList.add(countArticle);
+        countName.add("评论数");
+        countList.add(countComment);
+        countName.add("点赞数");
+        countList.add(countThumbup);
+        countName.add("收藏数");
+        countList.add(countCollection);
+        List<Category> categoryList = categoryService.findCategory();
+        List categoryCount = new ArrayList();
+        List categoryNameList = new ArrayList();
+        for (int i=0;i<categoryList.size();i++){
+            categoryNameList.add(categoryList.get(i).getCategoryName());
+            categoryCount.add(articleService.countByCategory(categoryList.get(i).getCategoryId()));
+        }
+        Map map = new HashMap();
+        map.put("countName",countName);
+        map.put("countList",countList);
+        map.put("categoryName",categoryNameList);
+        map.put("categoryCount",categoryCount);
+        return new Result(true, StatusCode.OK, "统计分析查询成功",map);
+    }
 
     /**
      * 分类查询

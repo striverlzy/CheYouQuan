@@ -121,6 +121,14 @@ public class QuestionService {
     }
 
     /**
+     * 获取问答数
+     * @return
+     */
+    public int countQuestion(){
+        return questionDao.countQuestion();
+    }
+
+    /**
      * 根据Id查询
      *
      * @param questionId

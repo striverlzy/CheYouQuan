@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
@@ -46,6 +47,30 @@ public class ArticleService {
         Specification<Article> specification = createSpecification(param);
         PageRequest pageRequest = PageRequest.of(param.getPage() - 1, param.getSize());
         return articleDao.findAll(specification, pageRequest);
+    }
+
+    /**
+     * 获取文章数
+     * @return
+     */
+    public int countArticle(){
+     return articleDao.countArticle();
+    }
+
+    /**
+     * 根据categoryId获取总数
+     * @return
+     */
+    public int countByCategory(String categoryId){
+        return articleDao.countByCategory(categoryId);
+    }
+
+    /**
+     * 获取点赞数
+     * @return
+     */
+    public int countThumbup(){
+        return articleDao.countThumbup();
     }
 
     /**

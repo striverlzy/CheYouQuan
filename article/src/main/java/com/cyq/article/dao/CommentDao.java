@@ -16,6 +16,10 @@ import java.util.List;
  */
 public interface CommentDao extends JpaRepository<Comment,String>, JpaSpecificationExecutor<Comment> {
 
+
+    @Query(value = "select count(*) from tb_comment", nativeQuery = true)
+    public int countComment();
+
     /**
      * 根据文章id查评论
      * @param articleId

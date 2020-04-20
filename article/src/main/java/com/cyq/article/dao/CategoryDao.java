@@ -13,14 +13,16 @@ import java.util.List;
  * @Date: 2020/1/23 09:04
  * @Description:
  */
-public interface CategoryDao extends JpaRepository<Category,String>, JpaSpecificationExecutor<Category> {
+public interface CategoryDao extends JpaRepository<Category, String>, JpaSpecificationExecutor<Category> {
 
 
-    @Query(value = "select category_name,category_id,category_state from tb_category where category_state = '1'",nativeQuery = true)
+    @Query(value = "select category_name,category_id,category_state from tb_category where category_state = '1'", nativeQuery = true)
     public List<Category> findCategory();
 
-    @Query(value = "select category_name,category_id,category_state from tb_category where category_id = ?1",nativeQuery = true)
+    @Query(value = "select category_name,category_id,category_state from tb_category where category_id = ?1", nativeQuery = true)
     public List<Category> findByCategoryId(String CategoryId);
+
+
 
     // 禁用
     @Modifying

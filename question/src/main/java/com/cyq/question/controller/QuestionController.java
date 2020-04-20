@@ -14,6 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @Author：liuzhongyu
  * @Date: 2020/4/3 09:19
@@ -59,6 +64,22 @@ public class QuestionController {
     })
     public Result findByQuestionId(@RequestParam String questionId) {
         return new Result(true, StatusCode.OK, "根据Id查询成功",questionService.findByQuestionId(questionId));
+    }
+
+
+    /**
+     * 统计分析
+     *
+     * @return
+     */
+    @ApiOperation(value = "查询问答数", notes = "查询问答数")
+    @GetMapping(value = "/count")
+    public Result countArticle() {
+        int countQuestion = questionService.countQuestion();
+        Map map = new HashMap();
+        map.put("countName","问答数");
+        map.put("countList",countQuestion);
+        return new Result(true, StatusCode.OK, "查询问答数成功",map);
     }
 
 

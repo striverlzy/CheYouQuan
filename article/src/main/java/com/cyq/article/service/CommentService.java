@@ -1,5 +1,6 @@
 package com.cyq.article.service;
 
+import com.cyq.article.dao.ArticleDao;
 import com.cyq.article.dao.CommentDao;
 import com.cyq.article.dto.CommentDTO;
 import com.cyq.article.pojo.Comment;
@@ -31,6 +32,9 @@ public class CommentService {
 
     @Autowired
     private IdWorker idWorker;
+
+    @Autowired
+    private ArticleDao articleDao;
 
     public void findAll() {
         commentDao.findAll();
@@ -88,9 +92,17 @@ public class CommentService {
         comment.setUserId(param.getUserId());
         comment.setArticleId(param.getArticleId());
         comment.setContent(param.getContent());
+        articleDao.commentTotal(param.getArticleId());
         commentDao.save(comment);
     }
 
+    /**
+     * 获取评论数
+     * @return
+     */
+    public int countComment(){
+        return commentDao.countComment();
+    }
     /**
      * 删除
      *

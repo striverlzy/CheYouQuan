@@ -25,6 +25,8 @@ public interface QuestionDao extends JpaRepository<Question, String>, JpaSpecifi
     @Query(value = "update tb_question a set thumbup=thumbup+1 where question_id=?1", nativeQuery = true)
     public int updateThumbup(String questionId);
 
+    @Query(value = "select count(*) from tb_question", nativeQuery = true)
+    public int countQuestion();
 
     // 取消点赞
     @Modifying

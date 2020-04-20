@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -55,6 +57,21 @@ public class UserController {
     })
     public Result lockState(@RequestParam String userId) {
         return new Result(true, StatusCode.OK, "加入黑名单成功", userService.lockState(userId));
+    }
+
+    /**
+     * 统计分析
+     *
+     * @return
+     */
+    @ApiOperation(value = "查询用户数", notes = "查询用户数")
+    @GetMapping(value = "/count")
+    public Result countArticle() {
+        int countUser = userService.countUser();
+        Map map = new HashMap();
+        map.put("countName","用户数");
+        map.put("countList",countUser);
+        return new Result(true, StatusCode.OK, "查询用户数成功",map);
     }
 
 

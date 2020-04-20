@@ -22,6 +22,9 @@ public interface UserDao extends JpaRepository<User, String>, JpaSpecificationEx
      */
     public User findByMobile(String mobile);
 
+    @Query(value = "select count(*) from tb_user", nativeQuery = true)
+    public int countUser();
+
 
     /**
      * 根据用户名查询用户

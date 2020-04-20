@@ -53,6 +53,13 @@ public class CollectionService {
         collectionRecordDao.save(collectionRecord);
     }
 
+    /**
+     * 获取收藏数
+     * @return
+     */
+    public int countCollection(){
+        return collectionRecordDao.countCollection();
+    }
 
     /**
      * 收藏数加一
