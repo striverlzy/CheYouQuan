@@ -7,6 +7,8 @@ import com.tensquare.user.pojo.User;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 /**
  * 数据访问接口
  *
@@ -24,6 +26,13 @@ public interface UserDao extends JpaRepository<User, String>, JpaSpecificationEx
 
     @Query(value = "select count(*) from tb_user", nativeQuery = true)
     public int countUser();
+
+
+    @Query(value = "select mobile from tb_user", nativeQuery = true)
+    public List getMobileList();
+
+    @Query(value = "select username from tb_user", nativeQuery = true)
+    public List getUserNameList();
 
 
     /**

@@ -18,6 +18,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import org.springframework.util.StringUtils;
 import util.IdWorker;
 
 import com.tensquare.user.dao.UserDao;
@@ -71,10 +72,38 @@ public class UserService {
 
 
     /**
-     * 获取问答数
+     * 获取手机号
+     *
      * @return
      */
-    public int countUser(){
+    public List getMobileList() {
+        return userDao.getMobileList();
+    }
+
+    /**
+     * 获取用户名
+     *
+     * @return
+     */
+    public List getUserNameList() {
+        return userDao.getUserNameList();
+    }
+
+
+
+    public static String mobileEncrypt(String mobile) {
+        if (StringUtils.isEmpty(mobile) || (mobile.length() != 11)) {
+            return mobile;
+        }
+        return mobile.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
+    }
+
+    /**
+     * 获取问答数
+     *
+     * @return
+     */
+    public int countUser() {
         return userDao.countUser();
     }
 
@@ -87,7 +116,7 @@ public class UserService {
      */
     public User findByUsernameOrMobileAndPassword(String text, String password) {
         User user = userDao.findByMobile(text);
-        if(user == null){
+        if (user == null) {
             user = userDao.findByUsername(text);
         }
         if (user != null && encoder.matches(password, user.getPassword())) {
@@ -102,19 +131,29 @@ public class UserService {
      *
      * @param param
      */
-    public void add(RegisterDTO param) {
+    public Map<Boolean,String> add(RegisterDTO param) {
         User user = userDao.findByMobile(param.getMobile());
-        if(user == null){
+        Map<Boolean,String> map = new HashMap<Boolean,String>();
+        Boolean isExitName = this.getUserNameList().contains(param.getUsername());
+        if(isExitName){
+            map.put(false,"该用户名已被注册");
+            return map;
+        }
+        if (user == null) {
             user = new User();
             //判断验证码是否正确
             String syscode = (String) redisTemplate.opsForValue().get("smscode_" + param.getMobile());
-            System.out.println("syscode:"+param.getCode());
+            System.out.println("syscode:" + param.getCode());
             //提取系统正确的验证码
             if (syscode == null) {
-                throw new RuntimeException("请点击获取短信验证码");
+//                throw new RuntimeException("请点击获取短信验证码");
+                map.put(false,"请点击获取短信验证码");
+                return map;
             }
             if (!param.getCode().equals(syscode)) {
-                throw new RuntimeException("验证码输入不正确");
+//                throw new RuntimeException("验证码输入不正确");
+                map.put(false,"验证码输入不正确");
+                return map;
             }
             user.setUserId(idWorker.nextId() + "");
             user.setRegisterDate(new Date());//注册日期
@@ -128,6 +167,8 @@ public class UserService {
             user.setState("1");
             user.setPersonImage(param.getUserImage());
             userDao.save(user);
+            map.put(true,"注册成功");
+            return map;
         } else {
             throw new RuntimeException("该手机号已被注册");
         }

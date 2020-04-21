@@ -125,8 +125,16 @@ public class UserController {
     @ApiOperation(value = "用户注册", notes = "用户注册")
     @PostMapping("/register")
     public Result register(@RequestBody RegisterDTO param) {
-        userService.add(param);
-        return new Result(true, StatusCode.OK, "注册成功");
+       Map<Boolean,String> map = userService.add(param);
+       Result result = new Result();
+       for(Map.Entry<Boolean,String>entry:map.entrySet()){
+           if(entry.getKey()){
+               result = new Result(true, StatusCode.OK, entry.getValue());
+           }else {
+               result = new Result(false, StatusCode.ERROR, entry.getValue());
+           }
+       }
+        return result;
     }
 
     /**
@@ -152,8 +160,14 @@ public class UserController {
             @ApiImplicitParam(name = "mobile", value = "文章Id", paramType = "query")
     })
     public Result sendsms(@RequestParam(required = true) String mobile) {
-        userService.sendSms(mobile);
-        return new Result(true, StatusCode.OK, "发送成功");
+        Boolean isExit = userService.getMobileList().contains(mobile);
+        if(!isExit){
+            userService.sendSms(mobile);
+            return new Result(true, StatusCode.OK, "发送成功");
+        }else {
+            return new Result(false, StatusCode.ERROR, "该手机已被注册");
+        }
+
     }
 
 
