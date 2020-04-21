@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
@@ -16,7 +15,6 @@ import javax.persistence.criteria.*;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -99,13 +97,11 @@ public class ArticleService {
                 }
                 // articleState
                 if (param.getArticleState() != null && !"".equals(param.getArticleState())) {
-                    predicateList.add(cb.equal(root.get("articleState"), param.getArticleState()));
-                }else {
-                    predicateList.add(cb.notEqual(root.get("articleState").as(String.class), "0"));
+                    predicateList.add(cb.equal(root.get("articleState").as(String.class), param.getArticleState()));
                 }
 
                 List<Order> orders = new ArrayList<>();
-                orders.add(cb.desc(root.get("createDate")));
+                orders.add(cb.desc(root.get("createDate").as(LocalDateTime.class)));
                 query.orderBy(orders);
                 return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
             }

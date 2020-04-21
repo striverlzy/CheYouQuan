@@ -331,7 +331,12 @@ public class ArticleController {
         List<Category> categoryList = categoryService.findCategory();
         List categoryCount = new ArrayList();
         List categoryNameList = new ArrayList();
+        List categoryTableList = new ArrayList();
         for (int i=0;i<categoryList.size();i++){
+            Map map1 = new HashMap();
+            map1.put("value",articleService.countByCategory(categoryList.get(i).getCategoryId()));
+            map1.put("name",categoryList.get(i).getCategoryName());
+            categoryTableList.add(map1);
             categoryNameList.add(categoryList.get(i).getCategoryName());
             categoryCount.add(articleService.countByCategory(categoryList.get(i).getCategoryId()));
         }
@@ -339,6 +344,7 @@ public class ArticleController {
         map.put("countName",countName);
         map.put("countList",countList);
         map.put("perList",perList);
+        map.put("categoryTableList",categoryTableList);
         map.put("categoryName",categoryNameList);
         map.put("categoryCount",categoryCount);
         return new Result(true, StatusCode.OK, "统计分析查询成功",map);
