@@ -130,6 +130,17 @@ public class UserController {
     }
 
     /**
+     * 上传头像
+     *
+     * @return
+     */
+    @ApiOperation(value = "上传头像", notes = "上传头像")
+    @PostMapping("/upload")
+    public Result upload() {
+        return new Result(true, StatusCode.OK, "上传头像成功");
+    }
+
+    /**
      * 发送短信验证码
      *
      * @param mobile
@@ -137,6 +148,9 @@ public class UserController {
      */
     @ApiOperation(value = "发送短信验证码", notes = "发送短信验证码")
     @GetMapping("/sendsms")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "mobile", value = "文章Id", paramType = "query")
+    })
     public Result sendsms(@RequestParam(required = true) String mobile) {
         userService.sendSms(mobile);
         return new Result(true, StatusCode.OK, "发送成功");

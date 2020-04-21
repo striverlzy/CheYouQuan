@@ -126,7 +126,7 @@ public class UserService {
             String newpassword = encoder.encode(param.getPassword());//加密后的密码
             user.setPassword(newpassword);
             user.setState("1");
-            user.setPersonImage("1");
+            user.setPersonImage(param.getUserImage());
             userDao.save(user);
         } else {
             throw new RuntimeException("该手机号已被注册");
@@ -146,7 +146,7 @@ public class UserService {
         }
         System.out.println(mobile + "收到验证码是：" + code);
         //2.将验证码放入redis
-        redisTemplate.opsForValue().set("smscode_" + mobile, code + "", 500, TimeUnit.MINUTES);//五分钟过期
+        redisTemplate.opsForValue().set("smscode_" + mobile, code + "", 1, TimeUnit.MINUTES);//一分钟过期
         //3.将验证码和手机号发动到rabbitMQ中
         Map<String, String> map = new HashMap();
         map.put("mobile", mobile);

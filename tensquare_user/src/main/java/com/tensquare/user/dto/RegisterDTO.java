@@ -29,6 +29,9 @@ public class RegisterDTO extends Convert {
     @ApiModelProperty(value = "密码")
     private String password;
 
+    @ApiModelProperty(value = "头像")
+    private String userImage;
+
     @ApiModelProperty(value = "验证码")
     private String code;
 
