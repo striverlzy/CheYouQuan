@@ -7,8 +7,8 @@ spring:
     host: 47.100.25.217
 aliyun:
   sms:
-    accessKeyId: LTAI4Fcc7eXG3Mf9vTeVDwB7
-    accessKeySecret: wR7ZbF2uuItfLCMKtqYAOEP1HgbW0D
+    accessKeyId: 
+    accessKeySecret: 
     template_code: SMS_180345193
     sign_name: 于无声处动态圈短信服务
 eureka:
